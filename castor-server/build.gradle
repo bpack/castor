@@ -23,6 +23,19 @@ test {
 }
 
 
+jar {
+    enabled = true
+    manifest {
+        attributes 'Main-Class': 'com.ioglyph.castor.server.application.CastorServer'
+    }
+}
+
 bootJar {
+    enabled = false
     layered()
+}
+
+task modules(type: Copy){
+    into "$buildDir/modules/lib"
+    from configurations.runtimeClasspath
 }

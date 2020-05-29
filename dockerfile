@@ -1,18 +1,11 @@
-FROM adoptopenjdk/openjdk11:jdk-11.0.7_10-alpine as builder
+FROM adoptopenjdk/openjdk11:jdk-11.0.7_10-alpine
 
-WORKDIR app
-ARG JAR_FILE=castor-server/build/libs/*.jar
+ARG BUILD_DIR=castor-server/build
 
-COPY ${JAR_FILE} app.jar
-RUN java -Djarmode=layertools -jar app.jar extract
+WORKDIR /opt/castor
+COPY ${BUILD_DIR}/modules/lib/* ./modules/
+COPY ${BUILD_DIR}/libs/*.jar ./application.jar
 
-FROM adoptopenjdk/openjdk11:jre-11.0.7_10-alpine
-WORKDIR app
-COPY --from=builder app/dependencies/ ./
-COPY --from=builder app/snapshot-dependencies/ ./
-COPY --from=builder app/spring-boot-loader/ ./
-COPY --from=builder app/application/ ./
-
-CMD ["java", "org.springframework.boot.loader.JarLauncher"]
-
+CMD ["java", "-p", "/opt/castor/:/opt/castor/modules/", \
+    "-m", "com.ioglyph.castor.server/com.ioglyph.castor.server.application.CastorServer"]
 

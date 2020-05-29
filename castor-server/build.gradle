@@ -1,0 +1,28 @@
+plugins {
+    id "org.springframework.boot" version "2.3.0.RELEASE"
+}
+
+dependencies {
+
+    implementation project(':castor-api')
+    implementation project(':castor-core')
+    implementation project(':castor-feature')
+    implementation project(':castor-persistence')
+    implementation project(':castor-rest')
+    implementation project(':castor-security')
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+bootJar {
+    layered()
+}

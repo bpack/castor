@@ -1,0 +1,15 @@
+FROM amazoncorretto:11 AS builder
+
+ARG path=/usr/lib/jvm/java-11-amazon-corretto/
+
+RUN /usr/lib/jvm/java-11-amazon-corretto/bin/jlink \
+    --module-path /usr/lib/jvm/java-11-amazon-corretto/jmods \
+    --verbose \
+    --add-modules java.base,java.sql,java.naming,java.desktop,java.management,java.security.jgss,java.instrument \
+    --output /opt/jdk-minimal \
+    --compress 2 \
+    --no-header-files
+
+FROM amazonlinux:latest
+COPY --from=builder /opt/jdk-minimal /opt/jdk-minimal
+

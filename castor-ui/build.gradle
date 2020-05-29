@@ -1,0 +1,14 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+javafx {
+    version = "11"
+    modules = [ 'javafx.controls' ]
+}
+
+dependencies {
+    implementation project(':castor-api')
+}
+mainClassName = 'com.ioglyph.castor.ui.CastorUi'

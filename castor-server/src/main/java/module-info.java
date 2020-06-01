@@ -8,9 +8,12 @@ module com.ioglyph.castor.server{
 
     requires java.instrument;
     requires java.sql;
+//    requires java.xml;
 
     requires spring.beans;
     requires spring.boot;
+    requires spring.boot.actuator;
+    requires spring.boot.actuator.autoconfigure;
     requires spring.boot.autoconfigure;
     requires spring.context;
     requires spring.core;

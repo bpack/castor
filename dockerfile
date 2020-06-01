@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:jdk-11.0.7_10-alpine
+FROM adoptopenjdk/openjdk11:jre-11.0.7_10-alpine
 
 ARG BUILD_DIR=castor-server/build
 

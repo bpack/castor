@@ -1,4 +1,4 @@
-package com.ioglyph.castor.server.application;
+package com.ioglyph.castor.application;
 
 public class Page {
     private static final int MAX_LIMIT = 100;

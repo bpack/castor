@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':castor-api')
+    implementation project(':castor-model')
     implementation project(':castor-core')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'

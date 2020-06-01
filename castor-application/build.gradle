@@ -4,9 +4,9 @@ plugins {
 
 dependencies {
 
-    implementation project(':castor-api')
     implementation project(':castor-core')
     implementation project(':castor-feature')
+    implementation project(':castor-model')
     implementation project(':castor-persistence')
     implementation project(':castor-rest')
     implementation project(':castor-security')
@@ -27,7 +27,7 @@ test {
 jar {
     enabled = true
     manifest {
-        attributes 'Main-Class': 'com.ioglyph.castor.server.application.CastorServer'
+        attributes 'Main-Class': 'com.ioglyph.castor.application.CastorServer'
     }
 }
 

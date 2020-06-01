@@ -4,5 +4,5 @@ module com.ioglyph.castor.ui {
     requires javafx.graphics;
     requires javafx.controls;
 
-    requires com.ioglyph.castor.api;
+    requires com.ioglyph.castor.model;
 }

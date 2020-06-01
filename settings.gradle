@@ -1,10 +1,10 @@
 rootProject.name = 'castor'
 
 include 'castor-core'
-include 'castor-api'
+include 'castor-application'
 include 'castor-feature'
+include 'castor-model'
 include 'castor-persistence'
 include 'castor-rest'
 include 'castor-security'
-include 'castor-server'
 include 'castor-ui'

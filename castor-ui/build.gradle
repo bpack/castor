@@ -9,6 +9,6 @@ javafx {
 }
 
 dependencies {
-    implementation project(':castor-api')
+    implementation project(':castor-model')
 }
 mainClassName = 'com.ioglyph.castor.ui.CastorUi'

@@ -1,0 +1,19 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"
+
+    logicalFilePath="db/changelog/db-changelog-1.0.xml">
+
+    <changeSet id="1"  author="bpack">
+        <createTable  tableName="podcast">
+            <column  name="name"  type="varchar(255)"/>
+        </createTable>
+        <rollback> <dropTable  tableName="podcast"/> </rollback>
+    </changeSet>
+
+</databaseChangeLog>
+

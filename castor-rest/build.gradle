@@ -1,9 +1,0 @@
-dependencies {
-    implementation project(':castor-common')
-    implementation project(':castor-core')
-    implementation project(':castor-model')
-    implementation project(':castor-persistence')
-    implementation project(':castor-service')
-
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-}

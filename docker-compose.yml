@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  castor:
+    image: "bpack/castor:latest"
+    environment:
+      - DB_HOST=postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  postgres:
+    image: "postgres:11"
+    environment:
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
+volumes:
+  postgresdata:

@@ -1,6 +1,0 @@
-
-dependencies {
-    implementation project(':castor-common')
-    implementation project(':castor-core')
-    implementation project(':castor-persistence')
-}

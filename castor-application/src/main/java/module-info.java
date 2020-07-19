@@ -8,8 +8,8 @@ module com.ioglyph.castor.application {
     requires com.ioglyph.castor.service;
 
     requires java.instrument;
-    requires java.persistence;
-//    requires java.sql;
+    requires java.sql;
+    requires java.xml.bind;
 
     requires spring.beans;
     requires spring.boot;
@@ -17,7 +17,6 @@ module com.ioglyph.castor.application {
     requires spring.boot.actuator.autoconfigure;
     requires spring.boot.autoconfigure;
     requires spring.context;
-    requires spring.data.jpa;
 
     exports com.ioglyph.castor.application;
     exports com.ioglyph.castor.application.config;
